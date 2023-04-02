@@ -1,0 +1,132 @@
+:root {
+    font-size: 16px;
+    font-family: "Opens Sans", sans-serif;
+    --text-primary: #b6b6b6;
+    --text-secundary: #ececec;
+    --bg-primary: #23232e;
+    --bg-secundary: #141418;
+}
+
+body {
+    color: black;
+    background-color: white;
+    margin: 0;
+    padding: 0;
+}
+
+/* SCROOL BAR */
+
+body::-webkit-scrollbar {
+    width: 0.25rem;
+}
+
+body::-webkit-scrollbar-track {
+    background: #1e1e24;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #6649b8;
+}
+
+main {
+    margin-left: 5rem;
+    padding: 1rem;
+}
+
+.navbar {
+    width: 5rem;
+    height: 100vh;
+    position: fixed;
+    background: var(--bg-primary);
+    transition: width 0.4s ease;
+}
+
+.navbar-nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+}
+.nav-item{
+    width: 100%;
+}
+.nav-item:last-child{
+    margin-top: auto;
+}
+.nav-link{
+    display: flex;
+    align-items: center;
+    height: 5rem;
+    color: var(--text-primary);
+    text-decoration: none;
+    transition: .5s;
+}
+
+.nav-link:hover{
+    color: #6649b8;
+}
+
+.link-text{
+    display: none;
+    margin-left: 1.5em;
+}
+
+.link-icon{
+    font-size: 2rem;
+    margin-left: 1.5rem;
+}
+.logo{
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    text-align: center;
+    color: var(--text-primary);
+    background: var(--bg-secundary);
+    font-size: 1.5rem;
+    letter-spacing: .3ch;
+    width: 100%;
+}
+
+.logo .link-icon{
+    transform: rotate(0deg);
+    transition: 0.5s;
+}
+
+/* When Hovering NavBar */
+
+.navbar:hover .logo .link-icon{
+    transform: rotate(-540deg);
+}
+
+/* Larg Screen */
+
+@media (min-width: 600px){
+    .navbar:hover{
+        width: 16rem;
+    }
+    .navbar:hover .link-text{
+        display: block;
+    }
+}
+@media (max-width: 600px){
+    .navbar{
+        bottom: 0;
+        width: 100vw;
+        height: 5rem;
+    }
+    .navbar-nav{
+        flex-direction: row;
+    }
+    .logo{
+        display: none;
+    }
+    .nav-link{
+        justify-content: center;
+    }
+    main{
+        margin: 0;
+    }
+}
